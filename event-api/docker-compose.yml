@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file: .env
+    environment:
+      DB_FILE: /data/events.db
+    volumes:
+      - event-data:/data
+volumes:
+  event-data:
