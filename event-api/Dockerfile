@@ -10,6 +10,7 @@ ENV NODE_ENV=production PORT=5000 DB_FILE=/data/events.db
 COPY --from=deps /app/node_modules ./node_modules
 COPY package*.json ./
 COPY src ./src
+COPY scripts ./scripts
 RUN mkdir -p /data && chown -R node:node /data /app
 USER node
 VOLUME /data
